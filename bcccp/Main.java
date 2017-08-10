@@ -20,7 +20,7 @@ import bcccp.tickets.season.SeasonTicket;
 import bcccp.tickets.season.SeasonTicketDAO;
 import bcccp.tickets.season.UsageRecordFactory;
 
-public class Main {
+public class Main {//test
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
