@@ -4,6 +4,7 @@ import java.util.List;
 
 public class AdhocTicketDAO  implements IAdhocTicketDAO  {
 
+	// Define variables
 	private IAdhocTicketFactory factory;
 	private int currentTicketNo;
 
