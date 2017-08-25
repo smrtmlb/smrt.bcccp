@@ -7,6 +7,11 @@ import bcccp.tickets.adhoc.IAdhocTicketDAO;
 import bcccp.tickets.season.ISeasonTicket;
 import bcccp.tickets.season.ISeasonTicketDAO;
 
+import bcccp.tickets.adhoc.IAdhocTicket;
+import bcccp.tickets.adhoc.IAdhocTicketDAO;
+import bcccp.tickets.season.ISeasonTicket;
+import bcccp.tickets.season.ISeasonTicketDAO;
+
 public class Carpark implements ICarpark {
 	
 	private List<ICarparkObserver> observers;
@@ -21,12 +26,21 @@ public class Carpark implements ICarpark {
 	public Carpark(String name, int capacity, 
 			IAdhocTicketDAO adhocTicketDAO, 
 			ISeasonTicketDAO seasonTicketDAO) {
+<<<<<<< HEAD
 		//Initializing constructor variables.
 		this.carparkId = name;
 		this.capacity = capacity;
 		this.adhocTicketDAO = adhocTicketDAO;
 		this.seasonTicketDAO = seasonTicketDAO;
 
+=======
+		//TODO Implement constructor
+		//Initializing constructor variables.
+				this.carparkId = name;
+				this.capacity = capacity;
+				this.adhocTicketDAO = adhocTicketDAO;
+				this.seasonTicketDAO = seasonTicketDAO;
+>>>>>>> 80b6d1eba1588c5f9e7bd25b3a482436512f2302
 	}
 
 
@@ -49,7 +63,14 @@ public class Carpark implements ICarpark {
 
 	@Override
 	public String getName() {
+<<<<<<< HEAD
 		return carparkId;
+=======
+		// TODO Auto-generated method stub
+		//return car park id
+		return carparkId;
+		//return null;
+>>>>>>> 80b6d1eba1588c5f9e7bd25b3a482436512f2302
 	}
 
 
