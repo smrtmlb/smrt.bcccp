@@ -15,6 +15,11 @@ public class PaystationController
 	
 
 	public PaystationController(ICarpark carpark, IPaystationUI ui) {
+
+		/Initializing constructor variables.
+		this.carpark = carpark;
+		this.ui = ui;
+
 		//TODO Implement constructor
 	}
 
