@@ -21,7 +21,12 @@ public class Carpark implements ICarpark {
 	public Carpark(String name, int capacity, 
 			IAdhocTicketDAO adhocTicketDAO, 
 			ISeasonTicketDAO seasonTicketDAO) {
-		//TODO Implement constructor
+		//Initializing constructor variables.
+		this.carparkId = name;
+		this.capacity = capacity;
+		this.adhocTicketDAO = adhocTicketDAO;
+		this.seasonTicketDAO = seasonTicketDAO;
+
 	}
 
 
@@ -44,8 +49,7 @@ public class Carpark implements ICarpark {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return carparkId;
 	}
 
 
