@@ -2,6 +2,7 @@ package bcccp.tickets.season;
 
 import java.util.List;
 
+// Interface season ticket
 public interface ISeasonTicket {
 	
 	public String getId();

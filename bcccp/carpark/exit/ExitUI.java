@@ -38,6 +38,7 @@ public class ExitUI extends JFrame implements IExitUI {
 					ExitUI frame = new ExitUI(100, 100);
 					frame.setVisible(true);
 				} catch (Exception e) {
+					// Print stack trace if exception occurred.
 					e.printStackTrace();
 				}
 			}

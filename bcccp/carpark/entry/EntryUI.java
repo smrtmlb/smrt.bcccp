@@ -39,6 +39,7 @@ public class EntryUI extends JFrame implements IEntryUI {
 					EntryUI frame = new EntryUI(100, 100);
 					frame.setVisible(true);
 				} catch (Exception e) {
+					// Print stack trace if exception occurred.
 					e.printStackTrace();
 				}
 			}

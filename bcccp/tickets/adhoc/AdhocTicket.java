@@ -1,7 +1,5 @@
 package bcccp.tickets.adhoc;
 
-import java.util.Date;
-
 public class AdhocTicket implements IAdhocTicket {
 	
 	private String carparkId;
@@ -15,42 +13,40 @@ public class AdhocTicket implements IAdhocTicket {
 	
 	
 	public AdhocTicket(String carparkId, int ticketNo, String barcode) {
-		//TDO Implement constructor
+		//Initializing constructor variables.
+		this.carparkId = carparkId;
+		this.ticketNo = ticketNo;
+		this.barcode = barcode;
 	}
 
 
 	@Override
 	public int getTicketNo() {
-		// TODO Auto-generated method stub
-		return 0;
+		return ticketNo;
 	}
 
 
 	@Override
 	public String getBarcode() {
-		// TODO Auto-generated method stub
-		return null;
+		return barcode;
 	}
 
 
 	@Override
 	public String getCarparkId() {
-		// TODO Auto-generated method stub
-		return null;
+		return carparkId;
 	}
 
 
 	@Override
 	public void enter(long dateTime) {
-		// TODO Auto-generated method stub
-		
+		entryDateTime = dateTime;		
 	}
 
 
 	@Override
 	public long getEntryDateTime() {
-		// TODO Auto-generated method stub
-		return 0;
+		return entryDateTime;
 	}
 
 
@@ -63,15 +59,14 @@ public class AdhocTicket implements IAdhocTicket {
 
 	@Override
 	public void pay(long dateTime, float charge) {
-		// TODO Auto-generated method stub
-		
+		this.paidDateTime = dateTime;
+		this.charge = charge;
 	}
 
 
 	@Override
 	public long getPaidDateTime() {
-		// TODO Auto-generated method stub
-		return 0;
+		return paidDateTime;
 	}
 
 
@@ -84,22 +79,19 @@ public class AdhocTicket implements IAdhocTicket {
 
 	@Override
 	public float getCharge() {
-		// TODO Auto-generated method stub
-		return 0;
+		return charge;
 	}
 
 
 	@Override
 	public void exit(long dateTime) {
-		// TODO Auto-generated method stub
-		
+		this.exitDateTime = dateTime;		
 	}
 
 
 	@Override
 	public long getExitDateTime() {
-		// TODO Auto-generated method stub
-		return 0;
+		return exitDateTime;
 	}
 
 
