@@ -29,22 +29,13 @@ public class EntryController
 			ICarSensor os, 
 			ICarSensor is,
 			IEntryUI ui) {
-		private ICarpark carpark;
-		private IAdhocTicket  adhocTicket = null;
-		private long entryTime;
-		private String seasonTicketId = null;
+		//Initializing constructor varables.
+		this.carpark = carpark;
+		this.entryGate = entryGate;
+		this.outsideSensor = os;
+		this.insideSensor = is;
+		this.ui = ui;
 		
-		public EntryController(Carpark carpark, IGate entryGate, 
-				ICarSensor os, 
-				ICarSensor is,
-				IEntryUI ui) {
-			//Initializing constructor variables.
-			this.carpark = carpark;
-			this.entryGate = entryGate;
-			this.outsideSensor = os;
-			this.insideSensor = is;
-			this.ui = ui;
-		//TODO Implement constructor
 	}
 
 
