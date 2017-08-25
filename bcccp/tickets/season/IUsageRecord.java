@@ -1,5 +1,6 @@
 package bcccp.tickets.season;
 
+// Interface usage record.
 public interface IUsageRecord {
 	
 	public void finalise(long endDateTime);
