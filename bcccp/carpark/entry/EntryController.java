@@ -29,7 +29,7 @@ public class EntryController
 			ICarSensor os, 
 			ICarSensor is,
 			IEntryUI ui) {
-		//Initializing constructor varables.
+		//Initializing constructor variables.
 		this.carpark = carpark;
 		this.entryGate = entryGate;
 		this.outsideSensor = os;
