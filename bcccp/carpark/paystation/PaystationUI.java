@@ -41,6 +41,7 @@ public class PaystationUI extends JFrame implements IPaystationUI {
 					PaystationUI frame = new PaystationUI(100, 100);
 					frame.setVisible(true);
 				} catch (Exception e) {
+					// Print stack trace if exception occurred.
 					e.printStackTrace();
 				}
 			}

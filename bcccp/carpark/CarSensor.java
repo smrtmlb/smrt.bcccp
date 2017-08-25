@@ -90,6 +90,7 @@ public class CarSensor extends JFrame implements ICarSensor {
 	}
 
 	@Override
+	// Get Id for car detector
 	public String getId() {
 		return detectorId;
 	}
