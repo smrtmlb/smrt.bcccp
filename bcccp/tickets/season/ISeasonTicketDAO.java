@@ -1,5 +1,6 @@
 package bcccp.tickets.season;
 
+// Interface season ticket dao.
 public interface ISeasonTicketDAO {
 	
 	public void registerTicket(ISeasonTicket ticket);
