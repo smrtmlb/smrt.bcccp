@@ -3,50 +3,39 @@ package bcccp.carpark.paystation;
 import bcccp.carpark.ICarpark;
 import bcccp.tickets.adhoc.IAdhocTicket;
 
-public class PaystationController 
-		implements IPaystationController {
-	
-	private IPaystationUI ui;	
+public class PaystationController implements IPaystationController {
+
+	private IPaystationUI ui;
 	private ICarpark carpark;
 
-	private IAdhocTicket  adhocTicket = null;
+	private IAdhocTicket adhocTicket = null;
 	private float charge;
-	
-	
 
 	public PaystationController(ICarpark carpark, IPaystationUI ui) {
 
-		/Initializing constructor variables.
+		// Initializing constructor variables.
 		this.carpark = carpark;
 		this.ui = ui;
 
-		//TODO Implement constructor
+		// TODO Implement constructor
 	}
-
-
 
 	@Override
 	public void ticketInserted(String barcode) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 	@Override
 	public void ticketPaid() {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 	@Override
 	public void ticketTaken() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
-	
 }
