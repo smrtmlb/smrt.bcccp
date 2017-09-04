@@ -1,7 +1,7 @@
 package bcccp.tickets.adhoc;
 
 public class AdhocTicket implements IAdhocTicket {
-	
+
 	private String carparkId;
 	private int ticketNo;
 	private long entryDateTime;
@@ -10,45 +10,37 @@ public class AdhocTicket implements IAdhocTicket {
 	private float charge;
 	private String barcode;
 
-	
-	
 	public AdhocTicket(String carparkId, int ticketNo, String barcode) {
-		//Initializing constructor variables.
+		// Initializing constructor variables.
 		this.carparkId = carparkId;
 		this.ticketNo = ticketNo;
 		this.barcode = barcode;
 	}
-
 
 	@Override
 	public int getTicketNo() {
 		return ticketNo;
 	}
 
-
 	@Override
 	public String getBarcode() {
 		return barcode;
 	}
-
 
 	@Override
 	public String getCarparkId() {
 		return carparkId;
 	}
 
-
 	@Override
 	public void enter(long dateTime) {
-		entryDateTime = dateTime;		
+		entryDateTime = dateTime;
 	}
-
 
 	@Override
 	public long getEntryDateTime() {
 		return entryDateTime;
 	}
-
 
 	@Override
 	public boolean isCurrent() {
@@ -56,19 +48,16 @@ public class AdhocTicket implements IAdhocTicket {
 		return false;
 	}
 
-
 	@Override
 	public void pay(long dateTime, float charge) {
 		this.paidDateTime = dateTime;
 		this.charge = charge;
 	}
 
-
 	@Override
 	public long getPaidDateTime() {
 		return paidDateTime;
 	}
-
 
 	@Override
 	public boolean isPaid() {
@@ -76,24 +65,20 @@ public class AdhocTicket implements IAdhocTicket {
 		return false;
 	}
 
-
 	@Override
 	public float getCharge() {
 		return charge;
 	}
 
-
 	@Override
 	public void exit(long dateTime) {
-		this.exitDateTime = dateTime;		
+		this.exitDateTime = dateTime;
 	}
-
 
 	@Override
 	public long getExitDateTime() {
 		return exitDateTime;
 	}
-
 
 	@Override
 	public boolean hasExited() {
@@ -101,6 +86,4 @@ public class AdhocTicket implements IAdhocTicket {
 		return false;
 	}
 
-	
-	
 }
