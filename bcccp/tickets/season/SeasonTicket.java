@@ -1,24 +1,19 @@
 package bcccp.tickets.season;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SeasonTicket implements ISeasonTicket {
-	
+
 	private List<IUsageRecord> usages;
 	private IUsageRecord currentUsage = null;
-	
+
 	private String ticketId;
 	private String carparkId;
 	private long startValidPeriod;
 	private long endValidPeriod;
-	
-	public SeasonTicket (String ticketId, 
-			             String carparkId, 
-			             long startValidPeriod,
-			             long endValidPeriod) {
-		//TDO Implement constructor
+
+	public SeasonTicket(String ticketId, String carparkId, long startValidPeriod, long endValidPeriod) {
+		// TDO Implement constructor
 	}
 
 	@Override
@@ -54,7 +49,7 @@ public class SeasonTicket implements ISeasonTicket {
 	@Override
 	public void recordUsage(IUsageRecord record) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -66,7 +61,7 @@ public class SeasonTicket implements ISeasonTicket {
 	@Override
 	public void endUsage(long dateTime) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -74,6 +69,5 @@ public class SeasonTicket implements ISeasonTicket {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 }
