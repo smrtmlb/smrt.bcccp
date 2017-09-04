@@ -2,20 +2,16 @@ package bcccp.tickets.adhoc;
 
 import java.util.List;
 
-public class AdhocTicketDAO  implements IAdhocTicketDAO  {
+public class AdhocTicketDAO implements IAdhocTicketDAO {
 
 	// Define variables
 	private IAdhocTicketFactory factory;
 	private int currentTicketNo;
 
-	
-	
 	public AdhocTicketDAO(IAdhocTicketFactory factory) {
-		//Initializing constructor variables.
+		// Initializing constructor variables.
 		this.factory = factory;
 	}
-
-
 
 	@Override
 	public IAdhocTicket createTicket(String carparkId) {
@@ -23,15 +19,11 @@ public class AdhocTicketDAO  implements IAdhocTicketDAO  {
 		return null;
 	}
 
-
-
 	@Override
 	public IAdhocTicket findTicketByBarcode(String barcode) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 	@Override
 	public List<IAdhocTicket> getCurrentTickets() {
@@ -39,6 +31,4 @@ public class AdhocTicketDAO  implements IAdhocTicketDAO  {
 		return null;
 	}
 
-	
-	
 }
