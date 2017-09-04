@@ -7,26 +7,19 @@ import bcccp.carpark.ICarpark;
 import bcccp.carpark.IGate;
 import bcccp.tickets.adhoc.IAdhocTicket;
 
-public class ExitController 
-		implements ICarSensorResponder,
-		           IExitController {
-	
+public class ExitController implements ICarSensorResponder, IExitController {
+
 	private IGate exitGate;
 	private ICarSensor insideSensor;
-	private ICarSensor outsideSensor; 
+	private ICarSensor outsideSensor;
 	private IExitUI ui;
-	
+
 	private ICarpark carpark;
-	private IAdhocTicket  adhocTicket = null;
+	private IAdhocTicket adhocTicket = null;
 	private long exitTime;
 	private String seasonTicketId = null;
-	
-	
 
-	public ExitController(Carpark carpark, IGate exitGate, 
-			ICarSensor is,
-			ICarSensor os, 
-			IExitUI ui) {
+	public ExitController(Carpark carpark, IGate exitGate, ICarSensor is, ICarSensor os, IExitUI ui) {
 
 		this.carpark = carpark;
 		this.exitGate = exitGate;
@@ -34,33 +27,25 @@ public class ExitController
 		this.insideSensor = is;
 		this.ui = ui;
 
-		//TODO Implement constructor
+		// TODO Implement constructor
 	}
-
-
 
 	@Override
 	public void ticketInserted(String ticketStr) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 	@Override
 	public void ticketTaken() {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 	@Override
 	public void carEventDetected(String detectorId, boolean detected) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
-	
 }

@@ -1,14 +1,14 @@
 package bcccp.carpark;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
-import java.awt.Font;
 import javax.swing.SwingConstants;
-import java.awt.Color;
+import javax.swing.border.EmptyBorder;
 
 @SuppressWarnings("serial")
 public class Gate extends JFrame implements IGate {
@@ -36,9 +36,9 @@ public class Gate extends JFrame implements IGate {
 			Thread.sleep(2000);
 			frame.raise();
 			Thread.sleep(2000);
-			frame.lower();			
+			frame.lower();
+		} catch (InterruptedException e) {
 		}
-		catch (InterruptedException e) {}
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class Gate extends JFrame implements IGate {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		gateStatusTextField = new JTextField();
 		gateStatusTextField.setBackground(Color.RED);
 		gateStatusTextField.setEditable(false);
@@ -64,30 +64,23 @@ public class Gate extends JFrame implements IGate {
 		gateStatusTextField.setColumns(10);
 	}
 
-	
-	
 	@Override
 	public void raise() {
 		gateStatusTextField.setBackground(Color.GREEN);
 		gateStatusTextField.setText("Gate Up");
-		raised = true;		
+		raised = true;
 	}
 
-	
-	
 	@Override
 	public void lower() {
 		gateStatusTextField.setBackground(Color.RED);
 		gateStatusTextField.setText("Gate Down");
-		raised = false;		
+		raised = false;
 	}
 
-	
-	
 	@Override
 	public boolean isRaised() {
 		return raised;
 	}
 
-	
 }

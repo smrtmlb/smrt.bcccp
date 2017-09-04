@@ -8,5 +8,4 @@ public class AdhocTicketFactory implements IAdhocTicketFactory {
 		return null;
 	}
 
-
 }

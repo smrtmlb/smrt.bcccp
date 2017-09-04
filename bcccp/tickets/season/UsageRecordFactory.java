@@ -8,5 +8,4 @@ public class UsageRecordFactory implements IUsageRecordFactory {
 		return null;
 	}
 
-
 }
