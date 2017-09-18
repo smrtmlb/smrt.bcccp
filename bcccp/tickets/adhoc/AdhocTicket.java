@@ -1,89 +1,139 @@
 package bcccp.tickets.adhoc;
 
-public class AdhocTicket implements IAdhocTicket {
+import java.util.Date;
 
-	private String carparkId;
-	private int ticketNo;
+public class AdhocTicket implements IAdhocTicket {
+	
+	private String carparkId_;
+	private int ticketNo_;
 	private long entryDateTime;
 	private long paidDateTime;
 	private long exitDateTime;
 	private float charge;
 	private String barcode;
+	private STATE state_;
+	
+	private enum STATE { ISSUED, CURRENT, PAID, EXITED }
 
+	
+	
 	public AdhocTicket(String carparkId, int ticketNo, String barcode) {
-		// Initializing constructor variables.
-		this.carparkId = carparkId;
-		this.ticketNo = ticketNo;
+		this.carparkId_ = carparkId;
+		this.ticketNo_ = ticketNo;
 		this.barcode = barcode;
+		this.state_ = STATE.ISSUED;		
 	}
 
-	@Override
-	public int getTicketNo() {
-		return ticketNo;
-	}
-
+	
+	
 	@Override
 	public String getBarcode() {
 		return barcode;
 	}
 
+
+	
 	@Override
 	public String getCarparkId() {
-		return carparkId;
+		return carparkId_;
 	}
 
+	
+	
 	@Override
-	public void enter(long dateTime) {
-		entryDateTime = dateTime;
+	public int getTicketNo() {
+		return ticketNo_;
 	}
+	
 
+	
+	@Override
+	public void enter(long entryDateTime) {
+		this.entryDateTime = entryDateTime;
+		this.state_ = STATE.CURRENT;		
+	}
+	
+	
+	
 	@Override
 	public long getEntryDateTime() {
 		return entryDateTime;
 	}
 
+	
+	
 	@Override
-	public boolean isCurrent() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void pay(long dateTime, float charge) {
-		this.paidDateTime = dateTime;
+	public void pay(long paidDateTime, float charge) {
+		this.paidDateTime = paidDateTime;
 		this.charge = charge;
+		state_ = STATE.PAID;
 	}
-
+	
+	
+	
 	@Override
 	public long getPaidDateTime() {
 		return paidDateTime;
 	}
 
-	@Override
-	public boolean isPaid() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
 
 	@Override
 	public float getCharge() {
 		return charge;
 	}
 
+	
+	
+	public String toString() {
+		Date entryDate = new Date(entryDateTime);
+		Date paidDate = new Date(paidDateTime);
+		Date exitDate = new Date(exitDateTime);
+
+		return "Carpark    : " + carparkId_ + "\n" +
+		       "Ticket No  : " + ticketNo_ + "\n" +
+		       "Entry Time : " + entryDate + "\n" + 
+		       "Paid Time  : " + paidDate + "\n" + 
+		       "Exit Time  : " + exitDate + "\n" +
+		       "State      : " + state_ + "\n" +
+		       "Barcode    : " + barcode;		
+	}
+
+
+
+	@Override
+	public boolean isCurrent() {
+		return state_ == STATE.CURRENT;
+	}
+
+
+
+	@Override
+	public boolean isPaid() {
+		return state_ == STATE.PAID;
+	}
+
+
+
 	@Override
 	public void exit(long dateTime) {
-		this.exitDateTime = dateTime;
+		exitDateTime = dateTime;
+		state_ = STATE.EXITED;
 	}
+
+
 
 	@Override
 	public long getExitDateTime() {
 		return exitDateTime;
 	}
 
+
+
 	@Override
 	public boolean hasExited() {
-		// TODO Auto-generated method stub
-		return false;
+		return state_ == STATE.EXITED;
 	}
+
 
 }
