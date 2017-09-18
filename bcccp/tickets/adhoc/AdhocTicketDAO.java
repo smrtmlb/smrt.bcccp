@@ -1,34 +1,47 @@
 package bcccp.tickets.adhoc;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class AdhocTicketDAO implements IAdhocTicketDAO {
+public class AdhocTicketDAO  implements IAdhocTicketDAO  {
 
-	// Define variables
-	private IAdhocTicketFactory factory;
+	private Map<String, IAdhocTicket> currentTickets;
+	private IAdhocTicketFactory adhocTicketFactory_;
 	private int currentTicketNo;
 
-	public AdhocTicketDAO(IAdhocTicketFactory factory) {
-		// Initializing constructor variables.
-		this.factory = factory;
+	
+	
+	public AdhocTicketDAO(IAdhocTicketFactory adhocTicketFactory) {
+		this.adhocTicketFactory_ = adhocTicketFactory;
+		currentTickets = new HashMap<>();		
 	}
 
+	
+	
 	@Override
 	public IAdhocTicket createTicket(String carparkId) {
-		// TODO Auto-generated method stub
-		return null;
+		IAdhocTicket ticket = adhocTicketFactory_.make(carparkId, ++currentTicketNo);
+		currentTickets.put(ticket.getBarcode(), ticket);
+		return ticket;	
 	}
-
+	
+	
+	
 	@Override
 	public IAdhocTicket findTicketByBarcode(String barcode) {
-		// TODO Auto-generated method stub
-		return null;
+		return currentTickets.get(barcode);
+	}	
+
+	
+	
+	@Override
+	public List<IAdhocTicket> getCurrentTickets() {		
+		return Collections.unmodifiableList(new ArrayList<IAdhocTicket>(currentTickets.values()));
 	}
 
-	@Override
-	public List<IAdhocTicket> getCurrentTickets() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }
