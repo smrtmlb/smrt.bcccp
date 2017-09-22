@@ -35,6 +35,10 @@ public class ExitController
 			ICarSensor os, 
 			IExitUI ui) {
 		
+		if (carpark == null || exitGate == null || is == null || os == null || ui == null) {
+			throw new RuntimeException();
+		}
+		
 		this.carpark = carpark;
 		this.exitGate = exitGate;
 		this.is = is;
