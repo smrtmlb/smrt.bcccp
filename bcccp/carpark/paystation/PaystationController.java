@@ -20,6 +20,9 @@ public class PaystationController
 	
 
 	public PaystationController(ICarpark carpark, IPaystationUI ui) {
+		if (carpark == null || ui == null) {
+			throw new RuntimeException();
+		}
 		
 		this.carpark_ = carpark;
 		this.ui_ = ui;
