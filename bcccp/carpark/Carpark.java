@@ -22,6 +22,11 @@ public class Carpark implements ICarpark {
 	public Carpark(String name, int capacity, 
 			IAdhocTicketDAO adhocTicketDAO, 
 			ISeasonTicketDAO seasonTicketDAO) {
+		if (name == null || "".equals(name) || capacity <= 0 ) {
+			throw new RuntimeException();
+		}
+		
+		
 		this.carparkId = name;
 		this.capacity = capacity;
 		observers = new ArrayList<>();
