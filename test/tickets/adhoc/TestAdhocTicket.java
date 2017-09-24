@@ -21,5 +21,31 @@ import bcccp.tickets.season.ISeasonTicket;
 import bcccp.tickets.season.ISeasonTicketDAO;
 
 public class TestAdhocTicket {
+	
+		private List<ICarparkObserver> observers;
+	
+	private int capacity;
+	private int nParked;
+	private IcarparkId carparkId;
+	private iticketNo ticketNo;
+	private Ibarcode barcode;
+	private ISeasonTicketDAO seasonTicketDAO;
+	private Istate state;
+	
+	private ICarparkObserver observer;
+	private IAdhocTicket iAdhocTicket;
+	private ISeasonTicket iSeasonTicket;
+	
+		@Before
+	public void setUp() {
+	
+				
+		carparkId = mock(Icarparid,class);
+		ticketNo = mock(IticketNo, class);
+		barcode = mock(Ibarcode, class);
+		STATE.ISSUED = mock(Istate, class);
+	}
+	
+
 
 }
