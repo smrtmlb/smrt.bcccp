@@ -46,12 +46,26 @@ public class TestAdhocTicket {
 		STATE.ISSUED = mock(Istate, class);
 	}
 	
-@After
+	@After
 	public void tearDown() throws Exception {
 		carparkId = null;
 		ticketNo = null;
 		barcode = null;
 	}
 	
+	@Test
+	public void testgetBarcode() {
+		
+		assertTrue(ibarcode instanceof ibarcode);
+		assertEquals(ibarcode.getName(), barcode);
+	}
+			@Test
+	public void testgetCarparkId() {
+		assertTrue(iCarpark instanceof ICarpark);
+		assertEquals(iCarpark.getName(), carparkId);
+	
+	}
+	
+
 
 }
