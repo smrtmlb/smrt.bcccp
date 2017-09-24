@@ -27,6 +27,7 @@ public class Gate extends JFrame implements IGate {
 				try {
 					frame.setVisible(true);
 				} catch (Exception e) {
+					// Print trace if exception occurred.
 					e.printStackTrace();
 				}
 			}

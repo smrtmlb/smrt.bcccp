@@ -1,5 +1,6 @@
 package bcccp.carpark.paystation;
 
+//Interface Pay station UI
 public interface IPaystationUI {
 	public void registerController(IPaystationController controller);
 	public void deregisterController();

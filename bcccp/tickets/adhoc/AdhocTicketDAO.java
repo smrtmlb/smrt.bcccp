@@ -4,13 +4,15 @@ import java.util.List;
 
 public class AdhocTicketDAO  implements IAdhocTicketDAO  {
 
+	// Define variables
 	private IAdhocTicketFactory factory;
 	private int currentTicketNo;
 
 	
 	
 	public AdhocTicketDAO(IAdhocTicketFactory factory) {
-		//TODO Implement constructor
+		//Initializing constructor variables.
+		this.factory = factory;
 	}
 
 

@@ -2,7 +2,7 @@ package bcccp.carpark;
 
 import bcccp.tickets.adhoc.IAdhocTicket;
 import bcccp.tickets.season.ISeasonTicket;
-
+// Interface car park
 public interface ICarpark {
 	
 	public void register(ICarparkObserver observer);

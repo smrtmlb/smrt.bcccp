@@ -1,5 +1,6 @@
 package bcccp.tickets.adhoc;
 
+// Interface Adhoc ticket
 public interface IAdhocTicket {
 
 	public int getTicketNo();

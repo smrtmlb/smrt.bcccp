@@ -1,5 +1,6 @@
 package bcccp.carpark.exit;
 
+//Interface Exit ui
 public interface IExitUI {
 
 	public void registerController(IExitController controller);
